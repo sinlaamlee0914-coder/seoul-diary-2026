@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="zh-HK" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SEOUL DIARY 2026 ✦ Dark Y2K</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Orbitron:wght@600;800;900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans TC"', 'sans-serif'],
+            kr: ['"Noto Sans KR"', 'sans-serif'],
+            y2k: ['"Orbitron"', 'sans-serif'],
+            pixel: ['"Silkscreen"', 'monospace'],
+          },
+          colors: {
+            obsidian: '#09080d',
+            carddark: '#111017',
+            babypink: {
+              200: '#ffd6e7',
+              300: '#ffb3d1',
+              400: '#ff85c0',
+              500: '#f45d96',
+              950: '#2d0f1e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #050408;
+      color: #f8fafc;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      /* Subtle Y2K Glitter Dust & Micro-Grid */
+      background-image:
+        radial-gradient(1.5px 1.5px at 24px 36px, rgba(255, 255, 255, 0.55), transparent),
+        radial-gradient(1.5px 1.5px at 110px 140px, rgba(255, 133, 192, 0.65), transparent),
+        radial-gradient(2px 2px at 220px 80px, rgba(255, 255, 255, 0.4), transparent),
+        radial-gradient(1.5px 1.5px at 310px 210px, rgba(255, 133, 192, 0.55), transparent),
+        radial-gradient(circle at 50% 0%, rgba(255, 133, 192, 0.08) 0%, transparent 50%);
+      background-size: 340px 340px, 340px 340px, 340px 340px, 340px 340px, 100% 100%;
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Metallic Chrome Text */
+    .chrome-text {
+      background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 45%, #7c8798 52%, #f8fafc 85%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 10px rgba(255, 133, 192, 0.25));
+    }
+
+    /* Clean Obsidian Y2K Card matching IMG_6590.png */
+    .y2k-card {
+      background: linear-gradient(160deg, rgba(20, 18, 28, 0.94), rgba(11, 10, 16, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .y2k-card-pink {
+      background: linear-gradient(160deg, rgba(34, 16, 26, 0.92), rgba(12, 10, 16, 0.98));
+      border: 1px solid rgba(255, 133, 192, 0.38);
+      box-shadow: 0 8px 24px rgba(255, 133, 192, 0.1), inset 0 1px 0 rgba(255, 179, 209, 0.18);
+    }
+
+    /* Glitter Shimmer Animation */
+    @keyframes sparkleFloat {
+      0%, 100% { opacity: 0.35; transform: scale(0.92) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.12) rotate(10deg); }
+    }
+    .sparkle-anim {
+      animation: sparkleFloat 3s ease-in-out infinite;
+    }
+
+    /* Subtle CD Spin */
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .cd-mini {
+      background: conic-gradient(from 0deg, #e2e8f0, #ff85c0, #94a3b8, #fbcfe8, #ffffff, #f472b6, #e2e8f0);
+      animation: spinSlow 11s linear infinite;
+    }
+
+    .tap-btn:active {
+      transform: scale(0.96);
+    }
+  </style>
+</head>
+<body class="antialiased flex justify-center min-h-screen">
+
+  <!-- Mobile App Shell -->
+  <div class="w-full max-w-md bg-obsidian min-h-screen border-x border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.9)] relative flex flex-col pb-24">
+
+    <!-- Top Sticky Header -->
+    <header class="bg-obsidian/95 backdrop-blur-xl sticky top-0 z-30 border-b border-white/10 px-4 pt-3 pb-3">
+      
+      <!-- Y2K Flip-Phone Status Bar -->
+      <div class="bg-black/80 border border-white/15 rounded-full px-3 py-1 mb-2.5 flex items-center justify-between font-pixel text-[9px] text-babypink-300 tracking-wider">
+        <div class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-babypink-400 animate-ping"></span>
+          <span class="text-white">5G</span>
+          <span class="inline-flex items-end gap-[1.5px] h-2">
+            <i class="w-[2px] h-1 bg-babypink-400"></i>
+            <i class="w-[2px] h-1.5 bg-babypink-400"></i>
+            <i class="w-[2px] h-2 bg-babypink-400"></i>
+          </span>
+          <span class="text-babypink-300 ml-1">SEOUL_MODE: ON</span>
+        </div>
+        <div class="flex items-center gap-1.5 text-slate-300">
+          <span>♥ 100%</span>
+          <span class="inline-flex items-center border border-babypink-300/70 rounded-[2px] p-[1px] w-3.5 h-2">
+            <span class="bg-babypink-400 h-full w-full block"></span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Main Title Row with Cherry & Glitter Sparkles (NO 8-ball) -->
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="flex items-center gap-1.5 font-pixel text-[9px] text-babypink-300 tracking-widest mb-0.5">
+            <span class="sparkle-anim text-babypink-400">✦</span>
+            <span>2026.12.10 – 12.16</span>
+            <span class="text-white/40">•</span>
+            <span>7D6N WINTER</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-y2k text-xl font-black tracking-wider chrome-text">SEOUL DIARY</h1>
+            <span class="text-xs sparkle-anim" style="animation-delay: 0.8s;">✧</span>
+          </div>
+        </div>
+
+        <!-- Cherry + Mini Holographic CD Emblem -->
+        <div class="flex items-center gap-2">
+          <!-- Custom Glitter Cherry SVG -->
+          <div class="relative w-9 h-9 rounded-full bg-white/[0.04] border border-babypink-400/35 flex items-center justify-center shadow-[0_0_12px_rgba(255,133,192,0.2)]">
+            <svg class="w-6 h-6" viewBox="0 0 64 64" fill="none">
+              <path d="M36 10 C32 22, 22 32, 18 42" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M36 10 C40 22, 46 32, 46 44" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M36 10 C42 6, 52 8, 54 14 C48 16, 40 14, 36 10 Z" fill="#ff85c0" stroke="#ffffff" stroke-width="1"/>
+              <circle cx="18" cy="45" r="9.5" fill="url(#y2kCherry)" stroke="#ffd6e7" stroke-width="1.2"/>
+              <circle cx="46" cy="47" r="9.5" fill="url(#y2kCherry)" stroke="#ffd6e7" stroke-width="1.2"/>
+              <circle cx="15" cy="42" r="2" fill="#ffffff" opacity="0.9"/>
+              <circle cx="43" cy="44" r="2" fill="#ffffff" opacity="0.9"/>
+              <defs>
+                <radialGradient id="y2kCherry" cx="35%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#ff66a3"/>
+                  <stop offset="60%" stop-color="#be123c"/>
+                  <stop offset="100%" stop-color="#4c0519"/>
+                </radialGradient>
+              </defs>
+            </svg>
+            <span class="absolute -top-1 -right-1 text-[9px] text-babypink-300 sparkle-anim">✦</span>
+          </div>
+
+          <!-- Mini Spinning CD -->
+          <div class="w-9 h-9 rounded-full cd-mini p-[2px] flex items-center justify-center shadow-[0_0_12px_rgba(255,133,192,0.3)]">
+            <div class="w-3 h-3 rounded-full bg-obsidian border border-white/80"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 1-7 Horizontal Scrollable Pills (Visible on Itinerary Tab) -->
+      <div id="day-pills-wrapper" class="mt-3">
+        <div class="flex gap-2 overflow-x-auto no-scrollbar pb-0.5" id="day-pills-container"></div>
+      </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <main class="flex-1 px-4 pt-4 space-y-4">
+
+      <!-- ========================================================= -->
+      <!-- TAB 1: 行程表 (ITINERARY)                                  -->
+      <!-- ========================================================= -->
+      <section id="tab-itinerary" class="space-y-4">
+
+        <!-- Seoul Mid-December Weather Card -->
+        <div class="y2k-card-pink rounded-2xl p-3.5">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-black/50 border border-babypink-400/35 flex items-center justify-center text-babypink-300">
+                <i data-lucide="snowflake" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-y2k text-[11px] font-bold text-white tracking-wider">SEOUL WEATHER</span>
+                  <span class="font-pixel text-[8px] px-1.5 py-0.5 rounded bg-babypink-400 text-obsidian font-bold">12月中旬</span>
+                </div>
+                <p class="text-[11px] text-slate-300 mt-0.5">乾冷晴朗 · 日夜溫差大</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="font-y2k text-base font-black text-babypink-300">3°C <span class="text-xs text-slate-400 font-normal">/ -4°C</span></div>
+              <div class="font-pixel text-[8px] text-slate-400">DRY & COLD</div>
+            </div>
+          </div>
+          <div class="bg-black/45 border border-white/10 rounded-xl px-3 py-2 text-[11px] text-slate-300 flex items-center gap-2">
+            <span class="text-babypink-400 shrink-0">✦</span>
+            <span><strong class="text-white">洋蔥式穿搭貼士：</strong>室內暖氣強、室外凍，建議發熱內衣 + 毛衣 + 羽絨/厚大衣，隨身帶潤唇膏同暖包。</span>
+          </div>
+        </div>
+
+        <!-- DAY 1 CONTENT -->
+        <div id="day-1-pane" class="space-y-4">
+          <div class="flex items-center justify-between px-0.5">
+            <div>
+              <div class="font-pixel text-[9px] text-babypink-400 tracking-widest">CHAPTER 01 // ARRIVAL ✦</div>
+              <h2 class="text-sm font-bold text-white mt-0.5">2026年12月10日 (星期四)</h2>
+            </div>
+            <span id="d1-progress" class="font-pixel text-[9px] px-2.5 py-1 rounded-full bg-white/[0.06] border border-white/15 text-babypink-300">
+              0 / 4 DONE
+            </span>
+          </div>
+
+          <!-- Left Vertical Timeline matching IMG_6590.png -->
+          <div class="relative pl-4 border-l border-babypink-400/40 space-y-4 ml-1.5">
+
+            <!-- NODE 1: KE2002 Boarding Pass -->
+            <div class="relative y2k-card rounded-2xl p-4 transition-all" id="step-1">
+              <div class="absolute -left-[23px] top-4 w-4 h-4 rounded-full bg-obsidian border border-babypink-400 flex items-center justify-center text-[8px] text-babypink-300 shadow-[0_0_10px_#ff85c0]">✦</div>
+
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-pixel text-[10px] font-bold text-babypink-300 bg-babypink-400/15 border border-babypink-400/35 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+                  <i data-lucide="plane" class="w-3 h-3"></i> KE2002 // BOARDING PASS
+                </span>
+                <button onclick="toggleStep(1)" class="step-check-btn tap-btn flex items-center gap-1 text-[11px] font-medium px-2.5 py-1 rounded-full border border-white/20 text-slate-400">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> <span>打卡</span>
+                </button>
+              </div>
+
+              <div class="bg-black/50 border border-white/10 rounded-xl p-3 mb-2.5">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="font-pixel text-[8px] text-slate-400">HONG KONG</div>
+                    <div class="font-y2k text-xl font-black text-white">HKG</div>
+                    <div class="font-y2k text-xs font-bold text-babypink-300 mt-0.5">12:35</div>
+                  </div>
+                  <div class="flex-1 px-3 flex flex-col items-center">
+                    <span class="font-pixel text-[8px] text-slate-400 mb-1">3H 30M DIRECT</span>
+                    <div class="w-full flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-babypink-400"></span>
+                      <div class="h-[1px] flex-1 border-t border-dashed border-white/30"></div>
+                      <i data-lucide="plane" class="w-3.5 h-3.5 text-babypink-400"></i>
+                      <div class="h-[1px] flex-1 border-t border-dashed border-white/30"></div>
+                      <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 mt-1">大韓航空 Korean Air</span>
+                  </div>
+                  <div class="text-right">
+                    <div class="font-pixel text-[8px] text-slate-400">SEOUL ICN</div>
+                    <div class="font-y2k text-xl font-black text-white">ICN</div>
+                    <div class="font-y2k text-xs font-bold text-babypink-300 mt-0.5">17:05</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs bg-white/[0.03] rounded-xl px-3 py-2 border border-white/10">
+                <span class="text-slate-300">預計完成入境手續及領取行李</span>
+                <span class="font-y2k text-xs font-bold text-white">18:00 - 18:30</span>
+              </div>
+            </div>
+
+            <!-- NODE 2: Airport Bus 6002 -->
+            <div class="relative y2k-card rounded-2xl p-4 transition-all" id="step-2">
+              <div class="absolute -left-[23px] top-4 w-4 h-4 rounded-full bg-obsidian border border-slate-400 flex items-center justify-center text-[8px] text-white">✧</div>
+
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <span class="font-y2k text-xs font-bold text-white bg-white/[0.07] border border-white/15 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+                  <i data-lucide="bus" class="w-3.5 h-3.5 text-babypink-400"></i> 18:30
+                </span>
+                <button onclick="toggleStep(2)" class="step-check-btn tap-btn flex items-center gap-1 text-[11px] font-medium px-2.5 py-1 rounded-full border border-white/20 text-slate-400">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> <span>打卡</span>
+                </button>
+              </div>
+
+              <h3 class="text-base font-bold text-white mb-1">搭機場巴士 <span class="text-babypink-300 font-y2k">6002</span> 號前往酒店</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                完成入境手續後前往機場巴士站乘搭 6002 號直達弘大，車程約 60 分鐘，預計 <span class="text-white font-bold">19:30 - 20:00</span> 到達酒店。
+              </p>
+            </div>
+
+            <!-- NODE 3: Junibino Hotel Hongdae Check-in -->
+            <div class="relative y2k-card rounded-2xl p-4 transition-all" id="step-3">
+              <div class="absolute -left-[23px] top-4 w-4 h-4 rounded-full bg-obsidian border border-slate-400 flex items-center justify-center text-[8px] text-white">✧</div>
+
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <span class="font-y2k text-xs font-bold text-white bg-white/[0.07] border border-white/15 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+                  <i data-lucide="clock" class="w-3.5 h-3.5 text-babypink-400"></i> 19:30 - 20:00
+                </span>
+                <button onclick="toggleStep(3)" class="step-check-btn tap-btn flex items-center gap-1 text-[11px] font-medium px-2.5 py-1 rounded-full border border-white/20 text-slate-400">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> <span>打卡</span>
+                </button>
+              </div>
+
+              <h3 class="text-base font-bold text-white mb-0.5">弘大朱尼比諾酒店 Check-in</h3>
+              <p class="text-xs text-slate-400 mb-3">Junibino Hotel Hongdae · 安頓休息</p>
+
+              <div class="bg-black/55 border border-white/10 rounded-xl p-3 mb-3">
+                <div class="font-pixel text-[9px] text-babypink-300 mb-1">KOREAN ADDRESS // 韓文地址</div>
+                <div class="font-kr text-sm font-bold text-white select-all">서울 마포구 양화진2길 31, 04084</div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2">
+                <button onclick="copyText('서울 마포구 양화진2길 31, 04084', '酒店韓文地址')" class="tap-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-babypink-400 text-obsidian text-xs font-bold shadow-[0_0_12px_rgba(255,133,192,0.35)]">
+                  <i data-lucide="copy" class="w-3.5 h-3.5"></i> 複製地址
+                </button>
+                <a href="https://map.naver.com/p/search/서울 마포구 양화진2길 31" target="_blank" class="tap-btn flex items-center justify-center py-2 px-2 rounded-xl bg-[#03C75A]/15 border border-[#03C75A]/45 text-[#4ADE80] text-xs font-bold">
+                  Naver Map
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=서울 마포구 양화진2길 31" target="_blank" class="tap-btn flex items-center justify-center py-2 px-2 rounded-xl bg-white/[0.07] border border-white/15 text-slate-200 text-xs font-bold">
+                  Google
+                </a>
+              </div>
+            </div>
+
+            <!-- NODE 4: 21:00 DINNER (2 Options) -->
+            <div class="relative y2k-card rounded-2xl p-4 transition-all" id="step-4">
+              <div class="absolute -left-[23px] top-4 w-4 h-4 rounded-full bg-obsidian border border-babypink-400 flex items-center justify-center text-[8px] text-babypink-300 shadow-[0_0_10px_#ff85c0]">♥</div>
+
+              <div class="flex items-center justify-between gap-2 mb-2.5">
+                <span class="font-y2k text-xs font-bold text-babypink-300 bg-babypink-400/15 border border-babypink-400/35 px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+                  <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 21:00 DINNER
+                </span>
+                <button onclick="toggleStep(4)" class="step-check-btn tap-btn flex items-center gap-1 text-[11px] font-medium px-2.5 py-1 rounded-full border border-white/20 text-slate-400">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> <span>打卡</span>
+                </button>
+              </div>
+
+              <h3 class="text-base font-bold text-white mb-0.5">首爾第一餐：韓式烤肉（2選1）</h3>
+              <p class="text-xs text-slate-400 mb-3">安頓好出發食晚餐！點擊鎖定心水餐廳：</p>
+
+              <div class="space-y-3">
+                <!-- OPT 01 -->
+                <div id="dinner-opt-1" class="rounded-xl border border-white/15 bg-black/45 p-3.5 transition-all">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <div class="flex items-center gap-2">
+                      <span class="font-pixel px-2 py-0.5 rounded text-[9px] bg-white/10 text-slate-300">OPT 01</span>
+                      <h4 class="font-bold text-sm text-white">牛酒家 <span class="text-xs font-normal text-slate-400">(우주가)</span></h4>
+                    </div>
+                    <button onclick="selectDinner(1)" id="btn-dinner-1" class="tap-btn px-3 py-1 rounded-full text-xs font-bold border border-babypink-400 text-babypink-300">
+                      揀呢間 ♥
+                    </button>
+                  </div>
+                  <p class="font-kr text-xs text-slate-300 mb-3 flex items-center gap-1.5">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-babypink-400 shrink-0"></i>
+                    <span>서울특별시 마포구 양화로16길 15 1층</span>
+                  </p>
+                  <div class="grid grid-cols-3 gap-2">
+                    <button onclick="copyText('서울특별시 마포구 양화로16길 15 1층', '牛酒家地址')" class="tap-btn py-1.5 px-2 rounded-lg bg-white/10 text-white text-xs font-semibold flex items-center justify-center gap-1">
+                      <i data-lucide="copy" class="w-3 h-3"></i> 複製地址
+                    </button>
+                    <a href="https://map.naver.com/p/search/서울특별시 마포구 양화로16길 15" target="_blank" class="tap-btn py-1.5 px-2 rounded-lg bg-[#03C75A]/15 border border-[#03C75A]/45 text-[#4ADE80] text-xs font-bold flex items-center justify-center">
+                      Naver Map
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=서울특별시 마포구 양화로16길 15" target="_blank" class="tap-btn py-1.5 px-2 rounded-lg bg-white/[0.07] border border-white/15 text-slate-200 text-xs font-bold flex items-center justify-center">
+                      Google
+                    </a>
+                  </div>
+                </div>
+
+                <!-- OPT 02 -->
+                <div id="dinner-opt-2" class="rounded-xl border border-white/15 bg-black/45 p-3.5 transition-all">
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <div class="flex items-center gap-2">
+                      <span class="font-pixel px-2 py-0.5 rounded text-[9px] bg-white/10 text-slate-300">OPT 02</span>
+                      <h4 class="font-bold text-sm text-white">林間路肉鋪 <span class="text-xs font-normal text-slate-400">(숲길정육점)</span></h4>
+                    </div>
+                    <button onclick="selectDinner(2)" id="btn-dinner-2" class="tap-btn px-3 py-1 rounded-full text-xs font-bold border border-babypink-400 text-babypink-300">
+                      揀呢間 ♥
+                    </button>
+                  </div>
+                  <p class="font-kr text-xs text-slate-300 mb-3 flex items-center gap-1.5">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-babypink-400 shrink-0"></i>
+                    <span>서울특별시 마포구 동교로 256</span>
+                  </p>
+                  <div class="grid grid-cols-3 gap-2">
+                    <button onclick="copyText('서울특별시 마포구 동교로 256', '林間路肉鋪地址')" class="tap-btn py-1.5 px-2 rounded-lg bg-white/10 text-white text-xs font-semibold flex items-center justify-center gap-1">
+                      <i data-lucide="copy" class="w-3 h-3"></i> 複製地址
+                    </button>
+                    <a href="https://map.naver.com/p/search/서울특별시 마포구 동교로 256" target="_blank" class="tap-btn py-1.5 px-2 rounded-lg bg-[#03C75A]/15 border border-[#03C75A]/45 text-[#4ADE80] text-xs font-bold flex items-center justify-center">
+                      Naver Map
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=서울특별시 마포구 동교로 256" target="_blank" class="tap-btn py-1.5 px-2 rounded-lg bg-white/[0.07] border border-white/15 text-slate-200 text-xs font-bold flex items-center justify-center">
+                      Google
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DAY 2 - DAY 7 PLACEHOLDER PANE -->
+        <div id="day-other-pane" class="hidden py-4">
+          <div class="y2k-card rounded-3xl p-6 text-center space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-babypink-400/15 border border-babypink-400/40 flex items-center justify-center mx-auto text-babypink-300">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <div id="other-day-code" class="font-pixel text-[10px] text-babypink-400 tracking-widest">CHAPTER 02 // 12/11</div>
+            <h3 id="other-day-title" class="text-base font-bold text-white">Day 2 (12/11) 行程待輸入</h3>
+            <p class="text-xs text-slate-400 max-w-xs mx-auto leading-relaxed">
+              隨時將呢日嘅 Excel 表格或者行程文字貼俾我，我會即刻幫你同步更新入呢個 Dark Y2K 行程 App！
+            </p>
+            <button onclick="selectDay(1)" class="tap-btn px-4 py-2 rounded-xl bg-babypink-400 text-obsidian text-xs font-bold">
+              返回 Day 1 (12/10) 行程
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 2: 購物清單 (SHOPPING WISHLIST)                        -->
+      <!-- ========================================================= -->
+      <section id="tab-shopping" class="hidden space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-pixel text-[9px] text-babypink-400 tracking-widest">CYBER WISHLIST // 必買清單 ✦</div>
+            <h2 class="text-base font-bold text-white mt-0.5">首爾購物攻略 & 戰利品</h2>
+          </div>
+          <button onclick="openShopModal()" class="tap-btn px-3 py-1.5 rounded-xl bg-babypink-400 text-obsidian text-xs font-bold flex items-center gap-1 shadow-[0_0_12px_rgba(255,133,192,0.4)]">
+            <i data-lucide="plus" class="w-3.5 h-3.5"></i> 新增心水
+          </button>
+        </div>
+
+        <!-- Shopping Cards Container -->
+        <div id="shopping-cards-container" class="space-y-3.5"></div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 3: 韓幣換算 (KRW ⇄ HKD CALCULATOR)                     -->
+      <!-- ========================================================= -->
+      <section id="tab-calc" class="hidden space-y-4">
+        <div>
+          <div class="font-pixel text-[9px] text-babypink-400 tracking-widest">Y2K CALCULATOR // 匯率換算</div>
+          <h2 class="text-base font-bold text-white mt-0.5">韓幣 ⇄ 港幣 即時計算機</h2>
+        </div>
+
+        <div class="y2k-card-pink rounded-2xl p-4 space-y-4">
+          <div class="flex items-center justify-between font-pixel text-[9px] text-babypink-300">
+            <span>KRW ➔ HKD CONVERTER</span>
+            <div class="flex items-center gap-1">
+              <span>1 HKD =</span>
+              <input type="number" id="rate-input" value="178" oninput="convertCurrency()" class="w-12 text-center bg-black/60 border border-babypink-400/50 rounded px-1 py-0.5 text-white font-bold" />
+              <span>₩</span>
+            </div>
+          </div>
+
+          <div class="bg-black/55 border border-white/15 rounded-xl p-3.5">
+            <label class="block font-pixel text-[9px] text-slate-400 mb-1">輸入韓幣金額 (₩ KRW)</label>
+            <input type="number" id="krw-input" placeholder="0" oninput="convertCurrency()" class="w-full bg-transparent font-y2k text-2xl font-black text-white focus:outline-none" />
+          </div>
+
+          <!-- Quick Preset Buttons -->
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="setKRW(1500)" class="tap-btn py-2 rounded-xl bg-white/[0.07] border border-white/15 font-y2k text-[11px] font-bold text-slate-200">₩1,500</button>
+            <button onclick="setKRW(10000)" class="tap-btn py-2 rounded-xl bg-white/[0.07] border border-white/15 font-y2k text-[11px] font-bold text-slate-200">₩10,000</button>
+            <button onclick="setKRW(30000)" class="tap-btn py-2 rounded-xl bg-white/[0.07] border border-white/15 font-y2k text-[11px] font-bold text-slate-200">₩30,000</button>
+            <button onclick="setKRW(50000)" class="tap-btn py-2 rounded-xl bg-white/[0.07] border border-white/15 font-y2k text-[11px] font-bold text-slate-200">₩50,000</button>
+          </div>
+
+          <div class="bg-black/55 border border-babypink-400/35 rounded-xl p-3.5 flex items-center justify-between">
+            <span class="text-xs font-bold text-babypink-300">約合港幣 (HKD)</span>
+            <div class="font-y2k text-2xl font-black chrome-text">
+              <span class="text-sm text-babypink-400 mr-1">$</span><span id="hkd-output">0.00</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 4: 備忘/SOS (MEMO & EMERGENCY SOS)                     -->
+      <!-- ========================================================= -->
+      <section id="tab-memo" class="hidden space-y-4">
+        <div>
+          <div class="font-pixel text-[9px] text-babypink-400 tracking-widest">POCKET TOOLKIT // 隨身救急</div>
+          <h2 class="text-base font-bold text-white mt-0.5">緊急求助電話 & 韓文備忘</h2>
+        </div>
+
+        <!-- Emergency SOS Card -->
+        <div class="y2k-card-pink rounded-2xl p-4 space-y-2.5">
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="text-xs font-bold text-babypink-300 flex items-center gap-1.5">
+              <i data-lucide="phone-call" class="w-3.5 h-3.5"></i> 韓國 & 香港 SOS 緊急求助（一鍵直撥）
+            </h3>
+            <span class="font-pixel text-[8px] text-slate-400">24/7 SOS</span>
+          </div>
+
+          <!-- 112 -->
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/55 border border-white/10">
+            <div>
+              <div class="text-xs font-bold text-white">韓國報警熱線</div>
+              <div class="text-[11px] text-slate-400">24小時緊急報案 · 112</div>
+            </div>
+            <a href="tel:112" class="tap-btn px-3 py-1.5 rounded-full bg-rose-500/20 border border-rose-400/50 text-rose-300 font-y2k text-xs font-bold flex items-center gap-1">
+              <i data-lucide="phone" class="w-3 h-3"></i> 112
+            </a>
+          </div>
+
+          <!-- 119 -->
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/55 border border-white/10">
+            <div>
+              <div class="text-xs font-bold text-white">韓國火警 / 救護車</div>
+              <div class="text-[11px] text-slate-400">醫療急救 / 消防 · 119</div>
+            </div>
+            <a href="tel:119" class="tap-btn px-3 py-1.5 rounded-full bg-rose-500/20 border border-rose-400/50 text-rose-300 font-y2k text-xs font-bold flex items-center gap-1">
+              <i data-lucide="phone" class="w-3 h-3"></i> 119
+            </a>
+          </div>
+
+          <!-- 1330 -->
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/55 border border-white/10">
+            <div>
+              <div class="text-xs font-bold text-white">韓國旅遊諮詢 / 翻譯熱線</div>
+              <div class="text-[11px] text-slate-400">支援廣東話 / 國語 24小時服務 · 1330</div>
+            </div>
+            <a href="tel:1330" class="tap-btn px-3 py-1.5 rounded-full bg-babypink-400 text-obsidian font-y2k text-xs font-bold flex items-center gap-1">
+              <i data-lucide="phone" class="w-3 h-3"></i> 1330
+            </a>
+          </div>
+
+          <!-- +852 1868 -->
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/55 border border-babypink-400/30">
+            <div>
+              <div class="text-xs font-bold text-babypink-200">香港入境處「協助在外香港居民」</div>
+              <div class="text-[11px] text-slate-400">24小時境外求助熱線 · +852 1868</div>
+            </div>
+            <a href="tel:+8521868" class="tap-btn px-3 py-1.5 rounded-full bg-babypink-400/20 border border-babypink-400 text-babypink-300 font-y2k text-xs font-bold flex items-center gap-1">
+              <i data-lucide="phone" class="w-3 h-3"></i> 1868
+            </a>
+          </div>
+
+          <!-- +82 2-755-0572 -->
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-black/55 border border-white/10">
+            <div>
+              <div class="text-xs font-bold text-white">中國駐韓國大使館領事保護</div>
+              <div class="text-[11px] text-slate-400">證件遺失 / 領事協助 · +82 2-755-0572</div>
+            </div>
+            <a href="tel:+8227550572" class="tap-btn px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold flex items-center gap-1">
+              <i data-lucide="phone" class="w-3 h-3"></i> 致電
+            </a>
+          </div>
+        </div>
+
+        <!-- Useful Korean Shopping Phrases -->
+        <div class="y2k-card rounded-2xl p-4 space-y-2.5">
+          <h3 class="text-xs font-bold text-white flex items-center gap-1.5">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5 text-babypink-400"></i> 實用購物韓文卡（點擊複製）
+          </h3>
+          <div onclick="copyText('이거 재고 있어요?', '韓文句子')" class="tap-btn p-3 rounded-xl bg-black/50 border border-white/10 flex items-center justify-between cursor-pointer">
+            <div>
+              <div class="font-kr text-xs font-bold text-white">이거 재고 있어요?</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">請問呢款有無貨？</div>
+            </div>
+            <i data-lucide="copy" class="w-3.5 h-3.5 text-babypink-300"></i>
+          </div>
+          <div onclick="copyText('이거 새 상품으로 주세요', '韓文句子')" class="tap-btn p-3 rounded-xl bg-black/50 border border-white/10 flex items-center justify-between cursor-pointer">
+            <div>
+              <div class="font-kr text-xs font-bold text-white">이거 새 상품으로 주세요</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">唔該俾件全新未拆封嘅我</div>
+            </div>
+            <i data-lucide="copy" class="w-3.5 h-3.5 text-babypink-300"></i>
+          </div>
+          <div onclick="copyText('영수증 주세요. 텍스 리펀 되나요?', '韓文句子')" class="tap-btn p-3 rounded-xl bg-black/50 border border-white/10 flex items-center justify-between cursor-pointer">
+            <div>
+              <div class="font-kr text-xs font-bold text-white">영수증 주세요. 텍스 리펀 되나요?</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">唔該俾張單我，請問可以退稅嗎？</div>
+            </div>
+            <i data-lucide="copy" class="w-3.5 h-3.5 text-babypink-300"></i>
+          </div>
+        </div>
+
+        <!-- Auto-Saving LocalStorage Memo -->
+        <div class="y2k-card rounded-2xl p-4">
+          <div class="flex items-center justify-between mb-2">
+            <label class="text-xs font-bold text-white flex items-center gap-1.5">
+              <i data-lucide="edit-3" class="w-3.5 h-3.5 text-babypink-400"></i> 隨身備忘錄
+            </label>
+            <span id="memo-status" class="font-pixel text-[8px] text-babypink-300">AUTO SAVED ✓</span>
+          </div>
+          <textarea id="memo-input" rows="4" placeholder="喺度記低預約編號、Sim卡資料或者備忘（內容會自動儲存）..." class="w-full rounded-xl bg-black/55 border border-white/15 p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-babypink-400"></textarea>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ==================== BOTTOM 4-TAB NAVIGATION ==================== -->
+    <nav class="fixed bottom-0 w-full max-w-md bg-obsidian/95 backdrop-blur-xl border-t border-white/15 px-2 py-2 grid grid-cols-4 items-center z-40">
+      <button onclick="switchMainTab('itinerary')" id="nav-itinerary" class="nav-item flex flex-col items-center gap-1 py-1 text-babypink-300 font-bold">
+        <i data-lucide="map" class="w-5 h-5"></i>
+        <span class="text-[10px]">行程表</span>
+      </button>
+      <button onclick="switchMainTab('shopping')" id="nav-shopping" class="nav-item flex flex-col items-center gap-1 py-1 text-slate-400 font-medium relative">
+        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+        <span class="text-[10px]">購物清單</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-babypink-400 absolute top-1 right-6"></span>
+      </button>
+      <button onclick="switchMainTab('calc')" id="nav-calc" class="nav-item flex flex-col items-center gap-1 py-1 text-slate-400 font-medium">
+        <i data-lucide="calculator" class="w-5 h-5"></i>
+        <span class="text-[10px]">韓幣換算</span>
+      </button>
+      <button onclick="switchMainTab('memo')" id="nav-memo" class="nav-item flex flex-col items-center gap-1 py-1 text-slate-400 font-medium">
+        <i data-lucide="sparkles" class="w-5 h-5"></i>
+        <span class="text-[10px]">備忘/SOS</span>
+      </button>
+    </nav>
+
+    <!-- ==================== ADD SHOPPING ITEM MODAL ==================== -->
+    <div id="shop-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center p-4">
+      <div class="y2k-card-pink w-full max-w-sm rounded-3xl p-5 space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="font-y2k text-xs font-bold text-white flex items-center gap-1.5">
+            <span class="text-babypink-400">✦</span> ADD WISHLIST ITEM
+          </h3>
+          <button onclick="closeShopModal()" class="p-1.5 rounded-full bg-white/10 text-slate-300">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="space-y-2.5 text-xs">
+          <div>
+            <label class="block text-babypink-300 font-bold mb-1">店舖名稱</label>
+            <input type="text" id="new-shop-store" placeholder="例如: OLIVE YOUNG / DAISO / GENTLE MONSTER" class="w-full rounded-xl bg-black/60 border border-white/15 px-3 py-2 text-white focus:outline-none focus:border-babypink-400" />
+          </div>
+          <div>
+            <label class="block text-babypink-300 font-bold mb-1">商品名稱</label>
+            <input type="text" id="new-shop-name" placeholder="例如: Torriden 保濕精華" class="w-full rounded-xl bg-black/60 border border-white/15 px-3 py-2 text-white focus:outline-none focus:border-babypink-400" />
+          </div>
+          <div>
+            <label class="block text-babypink-300 font-bold mb-1">韓文名稱（方便問店員）</label>
+            <input type="text" id="new-shop-kr" placeholder="例如: 토리든 다이브인 세럼" class="w-full rounded-xl bg-black/60 border border-white/15 px-3 py-2 text-white focus:outline-none focus:border-babypink-400" />
+          </div>
+          <div>
+            <label class="block text-babypink-300 font-bold mb-1">價格標籤（可選）</label>
+            <input type="text" id="new-shop-price" placeholder="例如: ₩18,000" class="w-full rounded-xl bg-black/60 border border-white/15 px-3 py-2 text-white focus:outline-none focus:border-babypink-400" />
+          </div>
+          <button onclick="addShopItem()" class="tap-btn w-full py-2.5 rounded-xl bg-babypink-400 text-obsidian font-bold text-xs mt-1 shadow-[0_0_15px_rgba(255,133,192,0.4)]">
+            加入購物清單 ✦
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-16 left-1/2 -translate-x-1/2 bg-obsidian/95 border border-babypink-400 text-white px-4 py-2 rounded-full text-xs font-bold shadow-[0_0_20px_rgba(255,133,192,0.45)] flex items-center gap-1.5 opacity-0 pointer-events-none transition-all duration-300 z-50">
+      <span class="text-babypink-400">✦</span>
+      <span id="toast-msg">已複製</span>
+    </div>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // ==================== 1. 7-DAY PILLS ====================
+    const daysData = [
+      { day: 1, date: '12/10', wk: '四' },
+      { day: 2, date: '12/11', wk: '五' },
+      { day: 3, date: '12/12', wk: '六' },
+      { day: 4, date: '12/13', wk: '日' },
+      { day: 5, date: '12/14', wk: '一' },
+      { day: 6, date: '12/15', wk: '二' },
+      { day: 7, date: '12/16', wk: '三' },
+    ];
+
+    const pillsContainer = document.getElementById('day-pills-container');
+    daysData.forEach(d => {
+      const btn = document.createElement('button');
+      btn.id = `pill-day-${d.day}`;
+      btn.onclick = () => selectDay(d.day);
+      btn.className = d.day === 1
+        ? 'tap-btn shrink-0 min-w-[78px] py-1.5 px-3 rounded-xl text-left bg-babypink-400 text-obsidian border border-white/80 shadow-[0_0_12px_rgba(255,133,192,0.35)] transition-all'
+        : 'tap-btn shrink-0 min-w-[78px] py-1.5 px-3 rounded-xl text-left bg-white/[0.04] text-slate-300 border border-white/10 transition-all';
+      btn.innerHTML = `
+        <div class="font-pixel text-[8px] opacity-80">${d.date} (${d.wk})</div>
+        <div class="font-y2k text-xs font-extrabold">DAY ${d.day}</div>
+      `;
+      pillsContainer.appendChild(btn);
+    });
+
+    function selectDay(dayNum) {
+      daysData.forEach(d => {
+        const el = document.getElementById(`pill-day-${d.day}`);
+        el.className = d.day === dayNum
+          ? 'tap-btn shrink-0 min-w-[78px] py-1.5 px-3 rounded-xl text-left bg-babypink-400 text-obsidian border border-white/80 shadow-[0_0_12px_rgba(255,133,192,0.35)] transition-all'
+          : 'tap-btn shrink-0 min-w-[78px] py-1.5 px-3 rounded-xl text-left bg-white/[0.04] text-slate-300 border border-white/10 transition-all';
+      });
+
+      const d1Pane = document.getElementById('day-1-pane');
+      const otherPane = document.getElementById('day-other-pane');
+      const info = daysData.find(x => x.day === dayNum);
+
+      if (dayNum === 1) {
+        d1Pane.classList.remove('hidden');
+        otherPane.classList.add('hidden');
+      } else {
+        d1Pane.classList.add('hidden');
+        otherPane.classList.remove('hidden');
+        document.getElementById('other-day-code').textContent = `CHAPTER 0${dayNum} // ${info.date} (星期${info.wk})`;
+        document.getElementById('other-day-title').textContent = `Day ${dayNum} (${info.date}) 行程待輸入`;
+      }
+    }
+
+    // ==================== 2. STEP CHECK-IN & DINNER PICKER ====================
+    const doneSteps = new Set();
+
+    function toggleStep(id) {
+      const card = document.getElementById(`step-${id}`);
+      const btn = card.querySelector('.step-check-btn');
+      if (doneSteps.has(id)) {
+        doneSteps.delete(id);
+        card.classList.remove('opacity-55');
+        btn.classList.remove('bg-babypink-400', 'text-obsidian', 'border-babypink-400', 'font-bold');
+        btn.classList.add('text-slate-400', 'border-white/20');
+        btn.querySelector('span').textContent = '打卡';
+      } else {
+        doneSteps.add(id);
+        card.classList.add('opacity-55');
+        btn.classList.add('bg-babypink-400', 'text-obsidian', 'border-babypink-400', 'font-bold');
+        btn.classList.remove('text-slate-400', 'border-white/20');
+        btn.querySelector('span').textContent = 'DONE ✓';
+      }
+      document.getElementById('d1-progress').textContent = `${doneSteps.size} / 4 DONE`;
+    }
+
+    function selectDinner(opt) {
+      [1, 2].forEach(num => {
+        const box = document.getElementById(`dinner-opt-${num}`);
+        const btn = document.getElementById(`btn-dinner-${num}`);
+        if (num === opt) {
+          box.classList.remove('border-white/15', 'opacity-55');
+          box.classList.add('border-babypink-400', 'bg-babypink-950/40', 'shadow-[0_0_16px_rgba(255,133,192,0.2)]');
+          btn.classList.remove('border-babypink-400', 'text-babypink-300');
+          btn.classList.add('bg-babypink-400', 'text-obsidian');
+          btn.textContent = '♥ 已鎖定呢間';
+        } else {
+          box.classList.remove('border-babypink-400', 'bg-babypink-950/40', 'shadow-[0_0_16px_rgba(255,133,192,0.2)]');
+          box.classList.add('border-white/15', 'opacity-55');
+          btn.classList.remove('bg-babypink-400', 'text-obsidian');
+          btn.classList.add('border-babypink-400', 'text-babypink-300');
+          btn.textContent = '揀呢間 ♥';
+        }
+      });
+      showToast(`今晚決定食：${opt === 1 ? '牛酒家' : '林間路肉鋪'}`);
+    }
+
+    // ==================== 3. SHOPPING WISHLIST ====================
+    const initialWishlist = [
+      {
+        id: 'oy-spray',
+        store: 'OLIVE YOUNG',
+        name: 'Forest Story 超強力定型噴霧',
+        sub: 'Super Hard Water Spray · 300萬瓶銷量',
+        kr: '포레스트스토리 슈퍼 하드 워터 스프레이',
+        price: 'HAIR STYLING',
+        bought: false,
+        art: 'spray'
+      },
+      {
+        id: 'daiso-brush',
+        store: 'DAISO',
+        name: '雙支裝眼線刷套裝 (Makeup Brush 8)',
+        sub: '打造清晰眼線妝感 · 2支裝',
+        kr: '아이라이너 브러시 / 젤 브러시 2P',
+        price: '₩1,500',
+        bought: false,
+        art: 'brush'
+      }
+    ];
+
+    let wishlist = JSON.parse(localStorage.getItem('seoul_y2k_wishlist_v2')) || initialWishlist;
+
+    function getProductSVG(art) {
+      if (art === 'spray') {
+        return `
+        <svg viewBox="0 0 96 112" class="w-full h-full">
+          <rect width="96" height="112" rx="10" fill="#141816"/>
+          <rect x="37" y="8" width="22" height="18" rx="3" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.35)"/>
+          <rect x="40" y="12" width="16" height="12" rx="2" fill="#8c6d46"/>
+          <path d="M29 35 C29 28, 67 28, 67 35 L67 102 C67 105, 29 105, 29 102 Z" fill="#9bc2a0"/>
+          <ellipse cx="48" cy="39" rx="16" ry="13" fill="#e6efe6" stroke="#b89b5e" stroke-width="1.2"/>
+          <text x="48" y="38" text-anchor="middle" font-size="6" font-weight="bold" fill="#111827">초강력</text>
+          <text x="48" y="45" text-anchor="middle" font-size="6" font-weight="bold" fill="#111827">고정</text>
+          <text x="48" y="61" text-anchor="middle" font-size="5.5" font-weight="bold" fill="#1e3a2f">Forest Story</text>
+          <text x="48" y="82" text-anchor="middle" font-size="22" font-weight="900" fill="rgba(255,255,255,0.45)">S</text>
+          <text x="48" y="76" text-anchor="middle" font-size="5" font-weight="bold" fill="#1e3a2f">SUPER HARD</text>
+        </svg>`;
+      }
+      if (art === 'brush') {
+        return `
+        <svg viewBox="0 0 96 112" class="w-full h-full">
+          <rect width="96" height="112" rx="10" fill="#18161a"/>
+          <rect x="27" y="8" width="42" height="96" rx="5" fill="#eceae4" stroke="#cbd5e1" stroke-width="1.2"/>
+          <circle cx="48" cy="14" r="2.8" fill="#18161a"/>
+          <text x="33" y="25" font-size="4.5" font-weight="bold" fill="#1e293b">아이라이너</text>
+          <text x="63" y="24" font-size="4.5" font-weight="bold" fill="#0f172a" transform="rotate(90 63 24)">₩1,500</text>
+          <text x="58" y="92" font-size="14" font-weight="900" fill="#1e293b">8</text>
+          <rect x="38" y="36" width="3.5" height="58" rx="1.5" fill="#111111"/>
+          <path d="M38 36 L39.75 29 L41.5 36 Z" fill="#44332a"/>
+          <rect x="46" y="35" width="3.8" height="59" rx="1.5" fill="#111111"/>
+          <path d="M46 35 L47.9 28 L49.8 35 Z" fill="#44332a"/>
+        </svg>`;
+      }
+      return `
+      <div class="w-full h-full flex items-center justify-center bg-babypink-950/50 text-babypink-300">
+        <i data-lucide="shopping-bag" class="w-7 h-7"></i>
+      </div>`;
+    }
+
+    function renderWishlist() {
+      const container = document.getElementById('shopping-cards-container');
+      container.innerHTML = wishlist.map(item => `
+        <div class="y2k-card rounded-2xl p-3.5 transition-all ${item.bought ? 'opacity-55' : ''}">
+          <div class="flex gap-3.5">
+            <div class="w-20 h-24 rounded-xl overflow-hidden border border-white/15 shrink-0 bg-black/60">
+              ${getProductSVG(item.art)}
+            </div>
+            <div class="flex-1 min-w-0 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <span class="font-y2k text-[9px] font-bold px-2 py-0.5 rounded bg-babypink-400/20 text-babypink-300 border border-babypink-400/35">
+                    ${item.store}
+                  </span>
+                  <span class="font-y2k text-[10px] font-bold text-slate-300">${item.price || ''}</span>
+                </div>
+                <h3 class="text-sm font-bold text-white leading-snug ${item.bought ? 'line-through text-slate-400' : ''}">${item.name}</h3>
+                <p class="text-[11px] text-slate-400 mt-0.5 truncate">${item.sub || ''}</p>
+              </div>
+              ${item.kr ? `
+                <div class="mt-2 bg-black/50 border border-white/10 rounded-lg px-2.5 py-1 font-kr text-[10px] text-babypink-200 truncate">
+                  ${item.kr}
+                </div>
+              ` : ''}
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 mt-3 pt-2.5 border-t border-white/10">
+            <button onclick="toggleBoughtItem('${item.id}')" class="tap-btn py-1.5 px-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1 ${
+              item.bought
+                ? 'bg-babypink-400 text-obsidian'
+                : 'bg-white/[0.07] text-babypink-300 border border-babypink-400/35'
+            }">
+              <i data-lucide="${item.bought ? 'check-circle-2' : 'circle'}" class="w-3.5 h-3.5"></i>
+              ${item.bought ? '已買 ✓' : '標記已買'}
+            </button>
+            <button onclick="copyText('${(item.kr || item.name).replace(/'/g, "\\'")}', '商品韓文名稱')" class="tap-btn py-1.5 px-2 rounded-xl bg-white/[0.07] text-white text-xs font-semibold flex items-center justify-center gap-1">
+              <i data-lucide="copy" class="w-3 h-3"></i> 複製韓文
+            </button>
+            <a href="https://search.shopping.naver.com/search/all?query=${encodeURIComponent(item.kr || item.name)}" target="_blank" class="tap-btn py-1.5 px-2 rounded-xl bg-[#03C75A]/15 border border-[#03C75A]/45 text-[#4ADE80] text-xs font-bold flex items-center justify-center">
+              Naver 搜圖
+            </a>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function toggleBoughtItem(id) {
+      const target = wishlist.find(i => i.id === id);
+      if (target) {
+        target.bought = !target.bought;
+        localStorage.setItem('seoul_y2k_wishlist_v2', JSON.stringify(wishlist));
+        renderWishlist();
+        showToast(target.bought ? `已入手：${target.name}` : '已取消已買標記');
+      }
+    }
+
+    function openShopModal() { document.getElementById('shop-modal').classList.remove('hidden'); }
+    function closeShopModal() { document.getElementById('shop-modal').classList.add('hidden'); }
+
+    function addShopItem() {
+      const store = document.getElementById('new-shop-store').value.trim().toUpperCase() || 'SEOUL SHOP';
+      const name = document.getElementById('new-shop-name').value.trim();
+      const kr = document.getElementById('new-shop-kr').value.trim();
+      const price = document.getElementById('new-shop-price').value.trim();
+      if (!name) {
+        showToast('請輸入商品名稱');
+        return;
+      }
+      wishlist.unshift({
+        id: 'custom-' + Date.now(),
+        store,
+        name,
+        sub: '自訂購物清單商品 ✦',
+        kr,
+        price,
+        bought: false,
+        art: 'custom'
+      });
+      localStorage.setItem('seoul_y2k_wishlist_v2', JSON.stringify(wishlist));
+      renderWishlist();
+      closeShopModal();
+      document.getElementById('new-shop-store').value = '';
+      document.getElementById('new-shop-name').value = '';
+      document.getElementById('new-shop-kr').value = '';
+      document.getElementById('new-shop-price').value = '';
+      showToast(`已加入 ${store} 清單`);
+    }
+
+    // ==================== 4. BOTTOM 4-TAB NAVIGATION ====================
+    function switchMainTab(tab) {
+      const tabs = ['itinerary', 'shopping', 'calc', 'memo'];
+      tabs.forEach(t => {
+        const section = document.getElementById(`tab-${t}`);
+        const navBtn = document.getElementById(`nav-${t}`);
+        if (t === tab) {
+          section.classList.remove('hidden');
+          navBtn.classList.remove('text-slate-400', 'font-medium');
+          navBtn.classList.add('text-babypink-300', 'font-bold');
+        } else {
+          section.classList.add('hidden');
+          navBtn.classList.remove('text-babypink-300', 'font-bold');
+          navBtn.classList.add('text-slate-400', 'font-medium');
+        }
+      });
+
+      const pillsWrapper = document.getElementById('day-pills-wrapper');
+      if (tab === 'itinerary') pillsWrapper.classList.remove('hidden');
+      else pillsWrapper.classList.add('hidden');
+    }
+
+    // ==================== 5. CALCULATOR, COPY & MEMO ====================
+    function setKRW(val) {
+      document.getElementById('krw-input').value = val;
+      convertCurrency();
+    }
+
+    function convertCurrency() {
+      const krw = parseFloat(document.getElementById('krw-input').value) || 0;
+      const rate = parseFloat(document.getElementById('rate-input').value) || 178;
+      document.getElementById('hkd-output').textContent = (krw / rate).toFixed(2);
+    }
+
+    function copyText(text, label) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast(`已複製${label}`);
+    }
+
+    let toastTimer;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.remove('opacity-0', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-2');
+      }, 2100);
+    }
+
+    const memoEl = document.getElementById('memo-input');
+    const memoStatus = document.getElementById('memo-status');
+    const savedMemo = localStorage.getItem('seoul_y2k_memo_v2');
+    if (savedMemo) memoEl.value = savedMemo;
+
+    memoEl.addEventListener('input', () => {
+      memoStatus.textContent = 'SAVING...';
+      localStorage.setItem('seoul_y2k_memo_v2', memoEl.value);
+      setTimeout(() => { memoStatus.textContent = 'AUTO SAVED ✓'; }, 400);
+    });
+
+    // Initial render
+    renderWishlist();
+  </script>
+</body>
+</html>
